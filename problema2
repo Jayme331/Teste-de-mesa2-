@@ -1,26 +1,22 @@
 using System;
-
-namespace CalculoRendimento
+namespace CalculadoraRendimento
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Dados do investimento
-            double valorPresente = 1000;
-            double taxaJuros = 5.3 / 100; // Convertendo taxa percentual para decimal
-            int periodoMeses = 6;
-
-            // Cabeçalho da tabela
-            Console.WriteLine("Mês\tValor Acumulado");
-            Console.WriteLine("--------------------");
-
-            // Cálculo e exibição dos valores mês a mês
-            double valorAcumulado = valorPresente;
-            for (int mes = 1; mes <= periodoMeses; mes++)
+            // Valores iniciais
+            double dinheiroInicial = 3800;
+            double jurosPorMes = 1.25 / 100; 
+            int totalMeses = 6;
+            // Mostrar o título da tabela
+            Console.WriteLine("Mês\tDinheiro");
+            // Calcular e mostrar o dinheiro a cada mês
+            for (int mes = 1; mes <= totalMeses; mes++)
             {
-                valorAcumulado *= (1 + taxaJuros);
-                Console.WriteLine($"{mes}\tR$ {valorAcumulado:F2}");
+                dinheiroInicial = dinheiroInicial * (1 + jurosPorMes);
+                Console.WriteLine($"{mes}\tR${dinheiroInicial:F2}");
+                Console.WriteLine();
             }
         }
     }
